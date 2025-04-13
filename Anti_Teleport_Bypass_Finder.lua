@@ -65,9 +65,52 @@ local Button = MainTab:CreateButton({
 })
 
 
+local Button = MainTab:CreateButton({
+	Name = "auto claim playtime",
+	Callback = function()
+		while true do
+			for i = 1, 9 do
+        local args = {
+            [1] = "ClaimPlaytime",
+            [2] = i
+        }
+
+        game:GetService("ReplicatedStorage")
+            :WaitForChild("Shared")
+            :WaitForChild("Framework")
+            :WaitForChild("Network")
+            :WaitForChild("Remote")
+            :WaitForChild("Function")
+            :InvokeServer(unpack(args))
+
+        wait(0.000000001) -- Delay between each claim (adjust if needed)
+    end
+
+    wait(0.000000001) -- Delay before the whole loop restarts (adjust as needed)
+end
+end
+
+})
 
 
 
+local Button = MainTab:CreateButton({
+	Name = "auto claim all chest",
+	Callback = function()
+		while true do
+		    wait(0.000000000000000000001)
+			local args = {
+    [1] = "ClaimChest",
+    [2] = "Giant Chest"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+
+		end
+	end,
+
+
+})
 
 
 
