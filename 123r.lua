@@ -109,6 +109,14 @@ game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framew
 		end
 	end,
 
+local args = {
+    [1] = "ClaimChest",
+    [2] = "Void Chest"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+
+		
 
 })
 
